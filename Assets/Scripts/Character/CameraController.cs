@@ -7,6 +7,7 @@ public class CameraController : MonoBehaviour {
 	[Header("Settings")]
 	public bool mouseLock = true;
 	public bool bobbing = true;
+	public bool lookIndicator = true;
 	public float mouseSensitivity = 6;
 
 	[Space]
@@ -30,8 +31,6 @@ public class CameraController : MonoBehaviour {
 
 	private float timer = 0.0f;
 
-	Camera camera;
-
 	void Start()
 	{
 		if(mouseLock)
@@ -40,7 +39,7 @@ public class CameraController : MonoBehaviour {
 			Cursor.visible = false;
 		}
 
-		camera = Camera.main;
+		looking.gameObject.GetComponent<MeshRenderer>().enabled = lookIndicator ? true : false;
 	}
 
 	void LateUpdate ()
@@ -58,7 +57,15 @@ public class CameraController : MonoBehaviour {
 		RaycastHit hit;
 		if(Physics.Raycast(ray, out hit))
 		{
-			looking.position = hit.collider.transform.position;
+			looking.position = hit.point;
+
+			if(Input.GetMouseButtonDown(0))
+			{
+				if(hit.collider.GetComponent<Battery>() != null)
+				{
+					
+				}
+			}
 		}
 
 		if (bobbing) HeadBob ();
