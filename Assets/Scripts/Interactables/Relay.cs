@@ -5,7 +5,10 @@ public class Relay : MonoBehaviour
 	public float radius = 3f;
 	public float health = 100;
 	public float decayAmount = 0.4f;
-	public float strength = 3;
+	public float zapEnergyUse = 5f;
+	public float strength = 50;
+	public float attackDelay = 0.5f;
+	float attackTimer = 0;
 	float decayTimer = 0;
 
 	public Transform shootFrom;
@@ -16,6 +19,9 @@ public class Relay : MonoBehaviour
 
 	void Update()
 	{
+		decayTimer += Time.deltaTime;
+		attackTimer += Time.deltaTime;
+
 		enemiesInRadius = Physics.OverlapSphere (transform.position, radius);
 
 		for(int i = 0; i < enemiesInRadius.Length; i++)
@@ -42,10 +48,13 @@ public class Relay : MonoBehaviour
 	void Attack()
 	{
 		Debug.DrawLine (shootFrom.transform.position, target.transform.position);
-		health -= 0.1f;
-		target.Damage (strength);
-		if (target.health <= 0)
-			target = null;
+
+		if(attackTimer >= attackDelay)
+		{
+			health -= zapEnergyUse;
+			target.Damage (strength);
+			attackDelay = 0;
+		}
 	}
 
 	void OnDrawGizmosSelected ()
@@ -66,6 +75,13 @@ public class Relay : MonoBehaviour
 
 	public void Damage(float amount)
 	{
-		
+		health -= amount;
+	}
+
+	public void Recharge(float amount)
+	{
+		Debug.Log ("Health before" + health);
+		health += amount;
+		Debug.Log ("Health after" + health);
 	}
 }

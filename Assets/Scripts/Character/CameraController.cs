@@ -31,6 +31,16 @@ public class CameraController : MonoBehaviour {
 
 	private float timer = 0.0f;
 
+	[Space]
+	[Header("Items")]
+	public float throwForce = 2;
+	public Transform holdingLocation;
+	public LayerMask rayMask;
+
+	bool isItemHeld = false;
+
+	Transform heldItem = null;
+
 	void Start()
 	{
 		if(mouseLock)
@@ -40,6 +50,48 @@ public class CameraController : MonoBehaviour {
 		}
 
 		looking.gameObject.GetComponent<MeshRenderer>().enabled = lookIndicator ? true : false;
+	}
+
+	void Update()
+	{
+		Ray ray = new Ray (transform.position, transform.forward);
+		RaycastHit hit;
+
+		if(Physics.Raycast(ray, out hit, 100, rayMask))
+		{
+			looking.position = hit.point;
+
+			if(Input.GetKeyDown(KeyCode.E))
+			{
+				if(hit.collider.GetComponent<Battery>() != null && Vector3.Distance(transform.position, hit.collider.transform.position) <= hit.collider.GetComponent<Battery>().radius)
+				{
+					heldItem = hit.collider.transform;
+					heldItem.GetComponent<Battery> ().held = true;
+					heldItem.GetComponent<Rigidbody> ().useGravity = false;
+					heldItem.GetComponent<Rigidbody> ().angularVelocity = Vector3.zero;
+					heldItem.GetComponent<Rigidbody> ().velocity = Vector3.zero;
+					heldItem.GetComponent<Rigidbody> ().detectCollisions = false;
+					heldItem.transform.position = holdingLocation.transform.position;
+					heldItem.transform.parent = holdingLocation;
+					heldItem.transform.localRotation = transform.rotation;
+					isItemHeld = true;
+				}
+			}
+		}
+
+		if(isItemHeld)
+		{
+			if(Input.GetMouseButtonUp(0))
+			{
+				heldItem.GetComponent<Rigidbody> ().useGravity = true;
+				heldItem.GetComponent<Rigidbody> ().detectCollisions = true;
+				holdingLocation.GetChild(0).gameObject.GetComponent<Rigidbody>().velocity = transform.forward * throwForce;
+				holdingLocation.GetChild(0).parent = null;
+				heldItem.GetComponent<Battery> ().held = false;
+				isItemHeld = false;
+				heldItem = null;
+			}
+		}
 	}
 
 	void LateUpdate ()
@@ -52,21 +104,6 @@ public class CameraController : MonoBehaviour {
 		transform.eulerAngles = CurrentRotation;
 
 		transform.position = target.position;
-
-		Ray ray = new Ray (transform.position, transform.forward);
-		RaycastHit hit;
-		if(Physics.Raycast(ray, out hit))
-		{
-			looking.position = hit.point;
-
-			if(Input.GetMouseButtonDown(0))
-			{
-				if(hit.collider.GetComponent<Battery>() != null)
-				{
-					
-				}
-			}
-		}
 
 		if (bobbing) HeadBob ();
 	}
