@@ -7,13 +7,11 @@ public class CameraController : MonoBehaviour {
 	[Header("Settings")]
 	public bool mouseLock = true;
 	public bool bobbing = true;
-	public bool lookIndicator = true;
 	public float mouseSensitivity = 6;
 
 	[Space]
 	[Header("Movement")]
 	public Transform target;
-	public Transform looking;
 	public float rotationSmoothTime = .02f;
 	public Vector2 pitchMinMax = new Vector2 (-40, 85);
 
@@ -48,8 +46,6 @@ public class CameraController : MonoBehaviour {
 			Cursor.lockState = CursorLockMode.Locked;
 			Cursor.visible = false;
 		}
-
-		looking.gameObject.GetComponent<MeshRenderer>().enabled = lookIndicator ? true : false;
 	}
 
 	void Update()
@@ -59,8 +55,6 @@ public class CameraController : MonoBehaviour {
 
 		if(Physics.Raycast(ray, out hit, 100, rayMask))
 		{
-			looking.position = hit.point;
-
 			if(Input.GetKeyDown(KeyCode.E))
 			{
 				if(hit.collider.GetComponent<Battery>() != null && Vector3.Distance(transform.position, hit.collider.transform.position) <= hit.collider.GetComponent<Battery>().radius)
