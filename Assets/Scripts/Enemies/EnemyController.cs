@@ -5,30 +5,87 @@ using UnityEngine;
 [RequireComponent(typeof(EnemyMotor))]
 public class EnemyController : MonoBehaviour {
 
-	public Transform[] towers = new Transform[5];
+	public Interactable focus;
+
+	public float health = 100;
+	public float attackTimer;
+	public float strength = 3;
+
+	public Interactable[] towers;
 
 	EnemyMotor motor;
 
+	float shortestDist = 0;
+	Interactable closestTower = null;
+
 	void Start () 
 	{
+		focus = null;
+
 		motor = GetComponent<EnemyMotor> ();
+
+		GameObject[] relays = GameObject.FindGameObjectsWithTag ("Relay");
+
+		towers = new Interactable[relays.Length]; 
+
+		for (int i = 0; i < relays.Length; i++)
+		{
+			towers [i] = relays [i].GetComponent<Interactable> ();
+		}
 	}
 
 	void Update () 
 	{
-		float shortestDist = 10000;
-		Vector3 closestTower = Vector3.zero;
-		
-		for(int i = 0; i < towers.Length; i++)
+		if(focus == null)
 		{
-			float distance = Vector3.Distance (transform.position, towers [i].position);
-			if(distance < shortestDist)
+			for(int i = 0; i < towers.Length; i++)
 			{
-				shortestDist = distance;
-				closestTower = towers [i].position;
+				float distance = Vector3.Distance (transform.position, towers[i].transform.position);
+				if(distance < shortestDist || closestTower == null)
+				{
+					shortestDist = distance;
+					closestTower = towers[i];
+				}
 			}
+
+			SetAttackFocus (closestTower);
 		}
 
-		motor.MoveToPoint (closestTower);
+		if(Vector3.Distance (transform.position, focus.transform.position) <= focus.radius)
+		{
+			Attack ();
+		}
+
+		if(health <= 0)
+		{
+			Object.Destroy (gameObject);
+		}
+	}
+
+	void Attack ()
+	{
+		attackTimer += Time.deltaTime;
+		if(attackTimer >= 1f)
+		{
+			focus.Damage (strength);
+			attackTimer = 0;
+		}
+	}
+
+	void SetAttackFocus(Interactable newFocus)
+	{
+		focus = newFocus;
+		motor.FollowTarget (focus);
+	}
+
+	void RemoveAttackFocus()
+	{
+		focus = null;
+		motor.StopFollowingTarget ();
+	}
+
+	public void Damage(float amount)
+	{
+		health -= amount;
 	}
 }
