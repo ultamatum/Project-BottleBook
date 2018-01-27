@@ -28,7 +28,7 @@ public class EnemyMotor : MonoBehaviour {
 		agent.SetDestination (point);
 	}
 
-	public void FollowTarget (Interactable newTarget)
+	public void FollowTarget (Relay newTarget)
 	{
 		agent.stoppingDistance = newTarget.radius;
 		agent.updateRotation = false;

@@ -12,6 +12,7 @@ public class CameraController : MonoBehaviour {
 	[Space]
 	[Header("Movement")]
 	public Transform target;
+	public Transform looking;
 	public float rotationSmoothTime = .02f;
 	public Vector2 pitchMinMax = new Vector2 (-40, 85);
 
@@ -29,6 +30,8 @@ public class CameraController : MonoBehaviour {
 
 	private float timer = 0.0f;
 
+	Camera camera;
+
 	void Start()
 	{
 		if(mouseLock)
@@ -36,6 +39,8 @@ public class CameraController : MonoBehaviour {
 			Cursor.lockState = CursorLockMode.Locked;
 			Cursor.visible = false;
 		}
+
+		camera = Camera.main;
 	}
 
 	void LateUpdate ()
@@ -48,6 +53,13 @@ public class CameraController : MonoBehaviour {
 		transform.eulerAngles = CurrentRotation;
 
 		transform.position = target.position;
+
+		Ray ray = new Ray (transform.position, transform.forward);
+		RaycastHit hit;
+		if(Physics.Raycast(ray, out hit))
+		{
+			looking.position = hit.collider.transform.position;
+		}
 
 		if (bobbing) HeadBob ();
 	}

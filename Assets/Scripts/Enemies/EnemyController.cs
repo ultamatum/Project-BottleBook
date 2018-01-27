@@ -5,18 +5,18 @@ using UnityEngine;
 [RequireComponent(typeof(EnemyMotor))]
 public class EnemyController : MonoBehaviour {
 
-	public Interactable focus;
+	public Relay focus;
 
 	public float health = 100;
 	public float attackTimer;
 	public float strength = 3;
 
-	public Interactable[] towers;
+	public Relay[] relays;
 
 	EnemyMotor motor;
 
 	float shortestDist = 0;
-	Interactable closestTower = null;
+	Relay closestTower = null;
 
 	void Start () 
 	{
@@ -24,13 +24,13 @@ public class EnemyController : MonoBehaviour {
 
 		motor = GetComponent<EnemyMotor> ();
 
-		GameObject[] relays = GameObject.FindGameObjectsWithTag ("Relay");
+		GameObject[] goRelays = GameObject.FindGameObjectsWithTag ("Relay");
 
-		towers = new Interactable[relays.Length]; 
+		relays = new Relay[goRelays.Length]; 
 
 		for (int i = 0; i < relays.Length; i++)
 		{
-			towers [i] = relays [i].GetComponent<Interactable> ();
+			relays [i] = goRelays [i].GetComponent<Relay> ();
 		}
 	}
 
@@ -38,13 +38,13 @@ public class EnemyController : MonoBehaviour {
 	{
 		if(focus == null)
 		{
-			for(int i = 0; i < towers.Length; i++)
+			for(int i = 0; i < relays.Length; i++)
 			{
-				float distance = Vector3.Distance (transform.position, towers[i].transform.position);
+				float distance = Vector3.Distance (transform.position, relays[i].transform.position);
 				if(distance < shortestDist || closestTower == null)
 				{
 					shortestDist = distance;
-					closestTower = towers[i];
+					closestTower = relays[i];
 				}
 			}
 
@@ -72,7 +72,7 @@ public class EnemyController : MonoBehaviour {
 		}
 	}
 
-	void SetAttackFocus(Interactable newFocus)
+	void SetAttackFocus(Relay newFocus)
 	{
 		focus = newFocus;
 		motor.FollowTarget (focus);

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Interactable : MonoBehaviour 
+public class Relay : MonoBehaviour 
 {
 	public float radius = 3f;
 	public float health = 100;

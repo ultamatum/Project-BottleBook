@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 195981574851936302}
   - component: {fileID: 136657568097808116}
   - component: {fileID: 54622577571679168}
-  - component: {fileID: 114265088317920502}
+  - component: {fileID: 114113315589082142}
   - component: {fileID: 114851836383023386}
   m_Layer: 0
   m_Name: Enemy
@@ -55,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1206865821892604}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.65, y: 0, z: -26.88}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4649893889502528}
@@ -131,7 +131,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114265088317920502
+--- !u!114 &114113315589082142
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -146,8 +146,7 @@ MonoBehaviour:
   health: 100
   attackTimer: 0
   strength: 3
-  towers:
-  - {fileID: 0}
+  relays: []
 --- !u!114 &114851836383023386
 MonoBehaviour:
   m_ObjectHideFlags: 1
