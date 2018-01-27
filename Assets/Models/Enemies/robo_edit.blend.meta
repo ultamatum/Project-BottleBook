@@ -1,0 +1,194 @@
+fileFormatVersion: 2
+guid: fcd8c5ec7a201a14ea25dc5b68a3e23c
+timeCreated: 1517074406
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: BRACES
+    100002: L_Elbow
+    100004: L_L_Leg
+    100006: L_Leg_Joint
+    100008: L_Lower_arm
+    100010: L_Shoulder
+    100012: L_Shoulder_Joint
+    100014: L_U_Arm
+    100016: L_U_Leg
+    100018: main
+    100020: R_Elbow
+    100022: R_L_Leg
+    100024: R_Leg_Joint
+    100026: R_Lower_arm
+    100028: R_Shoulder
+    100030: R_Shoulder_Joint
+    100032: R_U_Arm
+    100034: R_U_Leg
+    100036: //RootNode
+    100038: SPIKE
+    100040: TEETH
+    400000: BRACES
+    400002: L_Elbow
+    400004: L_L_Leg
+    400006: L_Leg_Joint
+    400008: L_Lower_arm
+    400010: L_Shoulder
+    400012: L_Shoulder_Joint
+    400014: L_U_Arm
+    400016: L_U_Leg
+    400018: main
+    400020: R_Elbow
+    400022: R_L_Leg
+    400024: R_Leg_Joint
+    400026: R_Lower_arm
+    400028: R_Shoulder
+    400030: R_Shoulder_Joint
+    400032: R_U_Arm
+    400034: R_U_Leg
+    400036: //RootNode
+    400038: SPIKE
+    400040: TEETH
+    2100000: lambert3SG
+    2100002: lambert2SG
+    2100004: lambert5SG
+    2300000: BRACES
+    2300002: L_Elbow
+    2300004: L_L_Leg
+    2300006: L_Leg_Joint
+    2300008: L_Lower_arm
+    2300010: L_Shoulder
+    2300012: L_Shoulder_Joint
+    2300014: L_U_Arm
+    2300016: L_U_Leg
+    2300018: main
+    2300020: R_Elbow
+    2300022: R_L_Leg
+    2300024: R_Leg_Joint
+    2300026: R_Lower_arm
+    2300028: R_Shoulder
+    2300030: R_Shoulder_Joint
+    2300032: R_U_Arm
+    2300034: R_U_Leg
+    2300036: SPIKE
+    2300038: TEETH
+    3300000: BRACES
+    3300002: L_Elbow
+    3300004: L_L_Leg
+    3300006: L_Leg_Joint
+    3300008: L_Lower_arm
+    3300010: L_Shoulder
+    3300012: L_Shoulder_Joint
+    3300014: L_U_Arm
+    3300016: L_U_Leg
+    3300018: main
+    3300020: R_Elbow
+    3300022: R_L_Leg
+    3300024: R_Leg_Joint
+    3300026: R_Lower_arm
+    3300028: R_Shoulder
+    3300030: R_Shoulder_Joint
+    3300032: R_U_Arm
+    3300034: R_U_Leg
+    3300036: SPIKE
+    3300038: TEETH
+    4300000: L_U_Leg
+    4300002: L_Leg_Joint
+    4300004: L_L_Leg
+    4300006: R_U_Leg
+    4300008: R_Leg_Joint
+    4300010: R_L_Leg
+    4300012: L_Shoulder
+    4300014: L_Shoulder_Joint
+    4300016: L_U_Arm
+    4300018: L_Elbow
+    4300020: L_Lower_arm
+    4300022: R_Shoulder
+    4300024: R_Shoulder_Joint
+    4300026: R_U_Arm
+    4300028: R_Elbow
+    4300030: R_Lower_arm
+    4300032: main
+    4300034: BRACES
+    4300036: SPIKE
+    4300038: TEETH
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
