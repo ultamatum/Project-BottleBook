@@ -38,7 +38,7 @@ public class CameraController : MonoBehaviour {
 		}
 	}
 
-	void LateUpdate () 
+	void LateUpdate ()
 	{
 		yaw += Input.GetAxis ("Mouse X") * mouseSensitivity;
 		pitch -= Input.GetAxis ("Mouse Y") * mouseSensitivity;
@@ -49,7 +49,7 @@ public class CameraController : MonoBehaviour {
 
 		transform.position = target.position;
 
-		HeadBob ();
+		if (bobbing) HeadBob ();
 	}
 
 	void HeadBob()
@@ -63,7 +63,7 @@ public class CameraController : MonoBehaviour {
 		if(Mathf.Abs(horizontal) == 0 && Mathf.Abs(vertical) == 0)
 		{
 			timer = 0f;
-		} else 
+		} else
 		{
 			waveslice = Mathf.Sin (timer);
 			timer += bobbingSpeed;
@@ -81,9 +81,9 @@ public class CameraController : MonoBehaviour {
 			translateChange = totalAxes * translateChange;
 			cSharpConversion.y = midpoint + translateChange;
 		}
-		else 
+		else
 		{
-			cSharpConversion.y = midpoint;	
+			cSharpConversion.y = midpoint;
 		}
 
 		transform.localPosition = cSharpConversion;
