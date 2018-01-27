@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour {
 			float targetRotation = Mathf.Atan2 (input.x, input.y) * Mathf.Rad2Deg + mainCamera.eulerAngles.y;
 			if((targetRotation - transform.eulerAngles.y) > 170 || ((transform.eulerAngles.y - targetRotation) > 170))
 			{
-				transform.eulerAngles += Vector3.up * targetRotation;
+				transform.eulerAngles = Vector3.up * targetRotation;
 			} else
 			{
 				transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref turnSmoothVel, turnSmoothTime);
