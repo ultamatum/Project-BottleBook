@@ -1,17 +1,19 @@
 fileFormatVersion: 2
-guid: e98f2714795dbb54e826b5fa45d1f54b
-timeCreated: 1517112035
+guid: 64ef8b6f18c2c3f4b87b19d9f82dcd73
+timeCreated: 1517114374
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: ENERGY_PROP
     400000: //RootNode
-    2100000: lambert1
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: pSphere1
-    9500000: //RootNode
+    400002: ENERGY_PROP
+    2100000: lambert2SG
+    2100002: lambert3SG
+    2300000: ENERGY_PROP
+    3300000: ENERGY_PROP
+    4300000: ENERGY_PROP
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -86,7 +88,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
