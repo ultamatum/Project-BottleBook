@@ -51,7 +51,7 @@ public class Relay : MonoBehaviour
 		} else if(health < 0)
 		{
 			health = 0;
-			Destroy (gameObject, 0.1f);
+			Destroy (transform.parent.gameObject, 0.1f);
 		}
 	}
 

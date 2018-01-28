@@ -1343,7 +1343,7 @@ Transform:
   - {fileID: 1006979529}
   - {fileID: 307199124}
   m_Father: {fileID: 1963950435}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &139684792
 Prefab:
@@ -2830,7 +2830,7 @@ Transform:
   - {fileID: 1969815628}
   - {fileID: 963821888}
   m_Father: {fileID: 1963950435}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &244356588
 Prefab:
@@ -3390,7 +3390,7 @@ Transform:
   - {fileID: 1760823636}
   - {fileID: 1926348146}
   m_Father: {fileID: 1963950435}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &318847690
 Prefab:
@@ -3664,7 +3664,7 @@ Transform:
   - {fileID: 433747145}
   - {fileID: 2131218045}
   m_Father: {fileID: 1963950435}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &340942197
 Prefab:
@@ -3993,11 +3993,11 @@ MonoBehaviour:
   radius: 40
   maxHealth: 100
   health: 100
-  decayAmount: 0.4
-  zapEnergyUse: 5
-  strength: 50
-  attackDelay: 3
-  shootFrom: {fileID: 1970520126}
+  decayAmount: 0
+  zapEnergyUse: 4
+  strength: 100
+  attackDelay: 1
+  shootFrom: {fileID: 780201227}
 --- !u!64 &362280123
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5358,11 +5358,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 472544900}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: -12.653702, y: 91.35515, z: -91.23987}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1963950435}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &473459032
 Prefab:
@@ -8860,7 +8860,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4910521721505160, guid: 95d0f1210481acd49a2dcb192799c864, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -64.96
+      value: 51.8
       objectReference: {fileID: 0}
     - target: {fileID: 4910521721505160, guid: 95d0f1210481acd49a2dcb192799c864, type: 2}
       propertyPath: m_LocalPosition.y
@@ -10533,7 +10533,7 @@ Transform:
   - {fileID: 1466775183}
   - {fileID: 691681021}
   m_Father: {fileID: 1963950435}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1043645196
 Prefab:
@@ -11304,7 +11304,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4104963152305420, guid: 013ac9f2d16a3f046a555822d790f5e2, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1331291761908720, guid: 013ac9f2d16a3f046a555822d790f5e2, type: 2}
       propertyPath: m_Name
@@ -13068,10 +13068,10 @@ MonoBehaviour:
   radius: 40
   maxHealth: 100
   health: 100
-  decayAmount: 0.4
-  zapEnergyUse: 5
-  strength: 50
-  attackDelay: 3
+  decayAmount: 0
+  zapEnergyUse: 4
+  strength: 100
+  attackDelay: 1
   shootFrom: {fileID: 626787737}
 --- !u!1001 &1353755723
 Prefab:
@@ -14925,11 +14925,11 @@ MonoBehaviour:
   radius: 40
   maxHealth: 100
   health: 100
-  decayAmount: 0.4
-  zapEnergyUse: 5
-  strength: 50
-  attackDelay: 3
-  shootFrom: {fileID: 1490776249}
+  decayAmount: 0
+  zapEnergyUse: 4
+  strength: 100
+  attackDelay: 1
+  shootFrom: {fileID: 780201227}
 --- !u!64 &1567530369
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15447,7 +15447,7 @@ Transform:
   - {fileID: 189915351}
   - {fileID: 1891770617}
   m_Father: {fileID: 1963950435}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1619122505
 Prefab:
@@ -15741,10 +15741,10 @@ MonoBehaviour:
   radius: 40
   maxHealth: 100
   health: 100
-  decayAmount: 0.4
-  zapEnergyUse: 5
-  strength: 50
-  attackDelay: 3
+  decayAmount: 0
+  zapEnergyUse: 4
+  strength: 100
+  attackDelay: 1
   shootFrom: {fileID: 780201227}
 --- !u!64 &1635443401
 MeshCollider:
@@ -16923,7 +16923,7 @@ Transform:
   - {fileID: 993267642}
   - {fileID: 1037513469}
   m_Father: {fileID: 1963950435}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1748202856
 Prefab:
@@ -19476,7 +19476,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4104963152305420, guid: 013ac9f2d16a3f046a555822d790f5e2, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4104963152305420, guid: 013ac9f2d16a3f046a555822d790f5e2, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -19776,7 +19776,6 @@ Transform:
   m_LocalPosition: {x: 12.653702, y: -88.35515, z: 91.23987}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 472544902}
   - {fileID: 309001867}
   - {fileID: 136639196}
   - {fileID: 1618685742}
@@ -20761,11 +20760,11 @@ MonoBehaviour:
   radius: 40
   maxHealth: 100
   health: 100
-  decayAmount: 0.4
-  zapEnergyUse: 5
-  strength: 50
-  attackDelay: 3
-  shootFrom: {fileID: 502187609}
+  decayAmount: 0
+  zapEnergyUse: 4
+  strength: 100
+  attackDelay: 1
+  shootFrom: {fileID: 780201227}
 --- !u!64 &2038962595
 MeshCollider:
   m_ObjectHideFlags: 0
