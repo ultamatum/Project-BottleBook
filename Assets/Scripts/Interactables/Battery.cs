@@ -40,7 +40,7 @@ public class Battery : MonoBehaviour {
 	void Recharge (Transform relay)
 	{
 		relay.GetComponent<Relay> ().Recharge (charge);
-		Debug.Log ("zap");
+
 		GameObject.Destroy (transform.gameObject);
 	}
 }

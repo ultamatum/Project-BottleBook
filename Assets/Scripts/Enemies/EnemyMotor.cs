@@ -7,6 +7,7 @@ using UnityEngine.AI;
 public class EnemyMotor : MonoBehaviour {
 
 	public Transform target;
+	public float stoppingDistMod = 0.6f;
 	NavMeshAgent agent;
 
 	void Start () 
@@ -28,9 +29,17 @@ public class EnemyMotor : MonoBehaviour {
 		agent.SetDestination (point);
 	}
 
-	public void FollowTarget (Relay newTarget)
+	public void FollowRelay (Relay newTarget)
 	{
-		agent.stoppingDistance = newTarget.radius;
+		agent.stoppingDistance = newTarget.radius * stoppingDistMod;
+		agent.updateRotation = false;
+
+		target = newTarget.transform;
+	}
+
+	public void FollowBase (HomeBase newTarget)
+	{
+		agent.stoppingDistance = newTarget.radius * stoppingDistMod;
 		agent.updateRotation = false;
 
 		target = newTarget.transform;

@@ -142,11 +142,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f428a067cfce5442a60e6d0bb65c145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  focus: {fileID: 0}
+  relayFocus: {fileID: 0}
+  baseFocus: {fileID: 0}
   health: 100
   attackTimer: 0
   strength: 3
   relays: []
+  homeBase: {fileID: 4517154544991450, guid: e73e92083c7d5374e95e648317fc9d76, type: 2}
 --- !u!114 &114851836383023386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -180,7 +182,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1206865821892604}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 2
+  m_Radius: 1.5
   m_Speed: 3
   m_Acceleration: 20
   avoidancePriority: 50

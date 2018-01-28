@@ -5,7 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(EnemyMotor))]
 public class EnemyController : MonoBehaviour {
 
-	public Relay focus;
+	public Relay relayFocus;
+	public HomeBase baseFocus;
 
 	public float health = 100;
 	public float attackTimer;
@@ -14,6 +15,9 @@ public class EnemyController : MonoBehaviour {
 	public Relay[] relays;
 
 	EnemyMotor motor;
+
+	bool targetFound = false;
+	bool focusBase = false;
 
 	float shortestDist = 0;
 	Relay closestTower = null;
@@ -24,7 +28,7 @@ public class EnemyController : MonoBehaviour {
 
 	void Start () 
 	{
-		focus = null;
+		relayFocus = null;
 
 		motor = GetComponent<EnemyMotor> ();
 
@@ -40,24 +44,46 @@ public class EnemyController : MonoBehaviour {
 
 	void Update () 
 	{
-		if(focus == null)
+		if(!focusBase)
 		{
-			for(int i = 0; i < relays.Length; i++)
+			if(!targetFound)
 			{
-				float distance = Vector3.Distance (transform.position, relays[i].transform.position);
-				if(distance < shortestDist || closestTower == null)
+				for(int i = 0; i < relays.Length; i++)
 				{
-					shortestDist = distance;
-					closestTower = relays[i];
+					float distance = Vector3.Distance (transform.position, relays[i].transform.position);
+					if(distance < shortestDist || closestTower == null)
+					{
+						shortestDist = distance;
+						closestTower = relays[i];
+					}
 				}
+
+				FocusRelay (closestTower);
+				targetFound = true;
 			}
 
-			SetAttackFocus (closestTower);
-		}
-
-		if(Vector3.Distance (transform.position, focus.transform.position) <= focus.radius)
+			if(Vector3.Distance (transform.position, relayFocus.transform.position) <= relayFocus.radius)
+			{
+				AttackRelay ();
+			}
+				
+			if(relayFocus.health <= 0)
+			{
+				focusBase = true;
+				targetFound = false;
+			}
+		} else 
 		{
-			Attack ();
+			if(!targetFound)
+			{
+				baseFocus = GameObject.FindGameObjectWithTag ("Home Base").GetComponent<HomeBase> ();
+				motor.FollowBase (baseFocus);
+			}
+
+			if(Vector3.Distance (transform.position, baseFocus.transform.position) <= baseFocus.radius)
+			{
+				AttackBase ();
+			}
 		}
 
 		if(health <= 0)
@@ -72,25 +98,35 @@ public class EnemyController : MonoBehaviour {
 		}
 	}
 
-	void Attack ()
+	void AttackRelay ()
 	{
 		attackTimer += Time.deltaTime;
 		if(attackTimer >= 1f)
 		{
-			focus.Damage (strength);
+			relayFocus.Damage (strength);
 			attackTimer = 0;
 		}
 	}
 
-	void SetAttackFocus(Relay newFocus)
+	void AttackBase ()
 	{
-		focus = newFocus;
-		motor.FollowTarget (focus);
+		attackTimer += Time.deltaTime;
+		if(attackTimer >= 1f)
+		{
+			baseFocus.Damage (strength);
+			attackTimer = 0;
+		}
+	}
+
+	void FocusRelay(Relay newFocus)
+	{
+		relayFocus = newFocus;
+		motor.FollowRelay (relayFocus);
 	}
 
 	void RemoveAttackFocus()
 	{
-		focus = null;
+		relayFocus = null;
 		motor.StopFollowingTarget ();
 	}
 

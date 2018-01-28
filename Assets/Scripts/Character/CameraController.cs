@@ -33,6 +33,7 @@ public class CameraController : MonoBehaviour {
 	[Header("Items")]
 	public float throwForce = 2;
 	public Transform holdingLocation;
+	public Transform gun;
 	public LayerMask rayMask;
 
 	bool isItemHeld = false;
@@ -68,6 +69,7 @@ public class CameraController : MonoBehaviour {
 					heldItem.transform.position = holdingLocation.transform.position;
 					heldItem.transform.parent = holdingLocation;
 					heldItem.transform.localRotation = transform.rotation;
+					gun.gameObject.SetActive (false);
 					isItemHeld = true;
 				}
 			}
@@ -84,6 +86,7 @@ public class CameraController : MonoBehaviour {
 				heldItem.GetComponent<Battery> ().held = false;
 				isItemHeld = false;
 				heldItem = null;
+				gun.gameObject.SetActive (true);
 			}
 		}
 	}
