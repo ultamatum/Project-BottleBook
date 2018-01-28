@@ -17,9 +17,6 @@ public class EnemyController : MonoBehaviour {
 
 	EnemyMotor motor;
 
-	bool targetFound = false;
-	bool focusBase = false;
-
 	float shortestDist = 0;
 	GameObject closestTower = null;
 
