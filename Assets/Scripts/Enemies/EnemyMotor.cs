@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Animations;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class EnemyMotor : MonoBehaviour {
@@ -9,10 +10,14 @@ public class EnemyMotor : MonoBehaviour {
 	public Transform target;
 	public float stoppingDistMod = 0.6f;
 	NavMeshAgent agent;
+	public Animator anim;
+
+	float speed;
 
 	void Start () 
 	{
 		agent = GetComponent<NavMeshAgent> ();
+		anim = GetComponentInChildren <Animator> ();
 	}
 
 	void Update ()
@@ -22,6 +27,10 @@ public class EnemyMotor : MonoBehaviour {
 			agent.SetDestination (target.position);
 			FaceTarget ();
 		}
+
+		speed = agent.velocity.magnitude;
+
+		anim.SetFloat ("Speed", speed);
 	}
 
 	public void MoveToPoint (Vector3 point)

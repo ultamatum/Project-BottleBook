@@ -75,7 +75,6 @@ public class HomeBase : MonoBehaviour {
 
 	void Attack()
 	{
-		//Debug.DrawLine (shootFrom.transform.position, target.transform.position);
 
 		if(attackTimer >= attackDelay)
 		{
@@ -83,7 +82,7 @@ public class HomeBase : MonoBehaviour {
 			attackTimer = 0;
 		}
 
-		DrawLine (shootFrom.transform.position, target.transform.position, Color.red);
+		DrawLine (shootFrom.transform.position, target.transform.position + new Vector3(0,1,0), Color.red);
 	}
 
 	void SetTarget (GameObject enemy)

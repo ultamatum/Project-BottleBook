@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -476,7 +476,7 @@ Prefab:
         type: 2}
       propertyPath: enemy
       value: 
-      objectReference: {fileID: 1206865821892604, guid: 157d3e5d90d59c84aaf56dba6963ec5b,
+      objectReference: {fileID: 1983414408730126, guid: 157d3e5d90d59c84aaf56dba6963ec5b,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 95d0f1210481acd49a2dcb192799c864, type: 2}
@@ -633,6 +633,34 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 429168226}
+--- !u!1 &446950672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 446950673}
+  m_Layer: 0
+  m_Name: beamTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &446950673
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 446950672}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1420041991}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &619198465
 Prefab:
   m_ObjectHideFlags: 0
@@ -676,6 +704,34 @@ Prefab:
         type: 2}
       propertyPath: mouseLock
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114057542990553800, guid: 57c72a6ecf6b2fb4f96931deae8f5710,
+        type: 2}
+      propertyPath: torus
+      value: 
+      objectReference: {fileID: 1296398917574342, guid: 0dd0d56f1365fda459f51d131b3f8a08,
+        type: 2}
+    - target: {fileID: 114057542990553800, guid: 57c72a6ecf6b2fb4f96931deae8f5710,
+        type: 2}
+      propertyPath: beamTarget
+      value: 
+      objectReference: {fileID: 446950672}
+    - target: {fileID: 114057542990553800, guid: 57c72a6ecf6b2fb4f96931deae8f5710,
+        type: 2}
+      propertyPath: torus2
+      value: 
+      objectReference: {fileID: 1071121938385988, guid: 17047c5491ebc2e4180b05120e05045f,
+        type: 2}
+    - target: {fileID: 114057542990553800, guid: 57c72a6ecf6b2fb4f96931deae8f5710,
+        type: 2}
+      propertyPath: torus3
+      value: 
+      objectReference: {fileID: 1609590471927814, guid: 655577153e3079c49b594f96659a74b3,
+        type: 2}
+    - target: {fileID: 114057542990553800, guid: 57c72a6ecf6b2fb4f96931deae8f5710,
+        type: 2}
+      propertyPath: damage
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 57c72a6ecf6b2fb4f96931deae8f5710, type: 2}
@@ -953,6 +1009,11 @@ MonoBehaviour:
   relays:
   - {fileID: 4239617}
   slider: {fileID: 421313913}
+--- !u!4 &1420041991 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4863169919910546, guid: 57c72a6ecf6b2fb4f96931deae8f5710,
+    type: 2}
+  m_PrefabInternal: {fileID: 619198465}
 --- !u!1 &1458987118
 GameObject:
   m_ObjectHideFlags: 0
