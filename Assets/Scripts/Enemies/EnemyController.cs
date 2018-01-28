@@ -72,7 +72,7 @@ public class EnemyController : MonoBehaviour {
 		{
 			if(!targetFound)
 			{
-				baseFocus = GameObject.FindGameObjectWithTag("Home Base");
+				baseFocus = GameObject.FindGameObjectWithTag ("Home Base").GetComponent<HomeBase> ();
 				motor.FollowBase (baseFocus);
 			}
 

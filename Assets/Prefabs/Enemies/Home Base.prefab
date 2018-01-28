@@ -11,6 +11,21 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1559989902962232}
   m_IsPrefabParent: 1
+--- !u!1 &1385472010316032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4587723846796590}
+  m_Layer: 0
+  m_Name: Shoot From
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1559989902962232
 GameObject:
   m_ObjectHideFlags: 0
@@ -24,7 +39,7 @@ GameObject:
   - component: {fileID: 114964759751138914}
   m_Layer: 0
   m_Name: Home Base
-  m_TagString: Untagged
+  m_TagString: Home Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 40
@@ -70,8 +85,22 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4474233904633588}
+  - {fileID: 4587723846796590}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4587723846796590
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1385472010316032}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 6.11, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4517154544991450}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23331524346354754
 MeshRenderer:
@@ -169,7 +198,10 @@ MonoBehaviour:
   batterySpawnDelay: 8
   health: 200
   maxHealth: 200
-  radius: 5
+  strength: 100
+  radius: 15
+  attackDelay: 0.35
+  shootFrom: {fileID: 4587723846796590}
   batteryOutput: {fileID: 4474233904633588}
   currentBattery: {fileID: 0}
   battery: {fileID: 1784617423511480, guid: 134662c3b2c14d6458fd98d0acb951ef, type: 2}
