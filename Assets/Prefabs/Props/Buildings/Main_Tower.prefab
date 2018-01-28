@@ -11,6 +11,36 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1556853941363954}
   m_IsPrefabParent: 1
+--- !u!1 &1255962126168298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4092504311961046}
+  m_Layer: 0
+  m_Name: Shoot From
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1374179068127004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4168579606701904}
+  m_Layer: 0
+  m_Name: Battery Slot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1556853941363954
 GameObject:
   m_ObjectHideFlags: 0
@@ -20,6 +50,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4717707481200754}
   - component: {fileID: 64627887636204510}
+  - component: {fileID: 114995345777507756}
   m_Layer: 0
   m_Name: Main_Tower
   m_TagString: Untagged
@@ -44,6 +75,32 @@ GameObject:
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 40
   m_IsActive: 1
+--- !u!4 &4092504311961046
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1255962126168298}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 34.07, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4717707481200754}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4168579606701904
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1374179068127004}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 8.67, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4717707481200754}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4568124833448728
 Transform:
   m_ObjectHideFlags: 1
@@ -64,10 +121,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1556853941363954}
   m_LocalRotation: {x: -0, y: -0.23173305, z: -0, w: 0.97277945}
-  m_LocalPosition: {x: -110.5, y: 6.01, z: -3.4}
+  m_LocalPosition: {x: -110.5, y: 6.010002, z: -3.4000015}
   m_LocalScale: {x: 1.03, y: 1.2093363, z: 1.0599773}
   m_Children:
   - {fileID: 4568124833448728}
+  - {fileID: 4092504311961046}
+  - {fileID: 4168579606701904}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -26.798, z: 0}
@@ -122,8 +181,29 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 2938a1b78ea645c49a10bf7030790e96, type: 3}
+--- !u!114 &114995345777507756
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1556853941363954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82831dc549e163541ac609376c52d12e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  batterySpawnDelay: 8
+  health: 200
+  maxHealth: 200
+  strength: 100
+  radius: 5
+  attackDelay: 0.3
+  shootFrom: {fileID: 4092504311961046}
+  batteryOutput: {fileID: 4168579606701904}
+  currentBattery: {fileID: 0}
+  battery: {fileID: 1784617423511480, guid: 134662c3b2c14d6458fd98d0acb951ef, type: 2}
