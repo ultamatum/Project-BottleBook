@@ -24,7 +24,7 @@ public class GunController : MonoBehaviour {
 		{
 			nextFireTime = Time.time + 1f / fireRate;
 			Shoot ();
-			createBeam(torus, torus2, torus3, this.transform.position, beamTarget.transform.position, 1f, 3f, 10f);
+			createBeam(torus, torus2, torus3, this.transform.position, beamTarget.transform.position, 2f, 12f, 10f);
 
 		}
 	}
