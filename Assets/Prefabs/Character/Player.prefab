@@ -143,6 +143,7 @@ GameObject:
   - component: {fileID: 143007114125675264}
   - component: {fileID: 114780310195365222}
   - component: {fileID: 208149901185028220}
+  - component: {fileID: 64702813592649090}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -331,15 +332,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1777314696761538}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalRotation: {x: -0, y: 0.760549, z: -0, w: 0.64928055}
+  m_LocalPosition: {x: -66.94072, y: 12.2, z: 0.853199}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4844261013712394}
   - {fileID: 4215520599821238}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 99.025, z: 0}
 --- !u!4 &4844261013712394
 Transform:
   m_ObjectHideFlags: 1
@@ -776,6 +777,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1995325388740200}
   m_Mesh: {fileID: 4300002, guid: 46c4b17158bc13e4f930cd0a43cb2ac2, type: 3}
+--- !u!64 &64702813592649090
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1777314696761538}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!81 &81560564845254548
 AudioListener:
   m_ObjectHideFlags: 1
@@ -818,7 +833,7 @@ MonoBehaviour:
   walkSpeed: 3
   runSpeed: 9
   gravity: -12
-  jumpHeight: 1
+  jumpHeight: 2
   turnSmoothTime: 0.2
   speedSmoothTime: 0.1
 --- !u!114 &114792909645630240
