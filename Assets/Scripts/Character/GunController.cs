@@ -70,5 +70,9 @@ public class GunController : MonoBehaviour {
 		rb2.velocity += GO2.transform.forward * moveSpeed;
 		rb3.velocity += GO3.transform.forward * moveSpeed;
 
+		Destroy (GO, lifeTime);
+		Destroy (GO2, lifeTime);
+		Destroy (GO3, lifeTime);
+
 	}
 }

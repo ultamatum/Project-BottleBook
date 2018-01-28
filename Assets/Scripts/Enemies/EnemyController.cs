@@ -91,8 +91,8 @@ public class EnemyController : MonoBehaviour {
 			Object.Destroy (gameObject);
 		}
 
-		if (Time.time >= nextBarkTime) {
-			nextBarkTime = Time.time + 100f / Random.Range(0f, barkFireRate);
+		if (Time.deltaTime >= nextBarkTime) {
+			nextBarkTime = Time.deltaTime + 300000f; // Random.Range(0f, barkFireRate);
 			Manager.instance.RandomizeBarks (barks);
 		}
 	}

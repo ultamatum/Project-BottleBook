@@ -58,6 +58,9 @@ public class Manager : MonoBehaviour
 	//RandomizeSfx chooses randomly between various audio clips and slightly changes their pitch.
 	public void RandomizeSfx (params AudioClip[] clips)
 	{
+		if (efxSource.isPlaying) {
+			return;
+		}
 		//Generate a random number between 0 and the length of our array of clips passed in.
 		int randomIndex = Random.Range(0, clips.Length);
 
@@ -77,6 +80,14 @@ public class Manager : MonoBehaviour
 	//RandomizeSfx chooses randomly between various audio clips and slightly changes their pitch.
 	public void RandomizeBarks (params AudioClip[] clips)
 	{
+
+		if (barkSource.isPlaying) {
+			return;
+		}
+		int rng = Random.Range (0, 75);
+		if (rng != 1) {
+			return;
+		}
 		//Generate a random number between 0 and the length of our array of clips passed in.
 		int randomIndex = Random.Range(0, clips.Length);
 
