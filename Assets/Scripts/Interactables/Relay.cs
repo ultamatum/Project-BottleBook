@@ -3,11 +3,12 @@
 public class Relay : MonoBehaviour 
 {
 	public float radius = 3f;
+	public float maxHealth = 100;
 	public float health = 100;
 	public float decayAmount = 0.4f;
 	public float zapEnergyUse = 5f;
 	public float strength = 50;
-	public float attackDelay = 0.5f;
+	public float attackDelay = 3f;
 	float attackTimer = 0;
 	float decayTimer = 0;
 
@@ -43,6 +44,15 @@ public class Relay : MonoBehaviour
 			health -= decayAmount;
 			decayTimer = 0;
 		}
+
+		if(health > maxHealth)
+		{
+			health = maxHealth;
+		} else if(health < 0)
+		{
+			health = 0;
+			Destroy (gameObject, 0.1f);
+		}
 	}
 
 	void Attack()
@@ -53,7 +63,7 @@ public class Relay : MonoBehaviour
 		{
 			health -= zapEnergyUse;
 			target.Damage (strength);
-			attackDelay = 0;
+			attackTimer = 0;
 		}
 	}
 
@@ -80,8 +90,11 @@ public class Relay : MonoBehaviour
 
 	public void Recharge(float amount)
 	{
-		Debug.Log ("Health before" + health);
 		health += amount;
-		Debug.Log ("Health after" + health);
+	}
+
+	public float BarHealth()
+	{
+		return health / maxHealth;
 	}
 }
