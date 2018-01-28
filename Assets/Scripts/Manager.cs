@@ -19,6 +19,8 @@ public class Manager : MonoBehaviour
 	public static bool lost = false;
 	public static bool won = false;
 
+	HomeBase homebase;
+
 	int lastint = 10;
 
 
@@ -45,24 +47,36 @@ public class Manager : MonoBehaviour
 	void Update()
 	{
 		timeLeft -= Time.deltaTime;
-		if(timeLeft <= 0 && won != true)
+
+		if (timeLeft <= 0 && won == false)
 		{
 			won = true;
+			spawner1.shouldSpawn = false;
+			spawner2.shouldSpawn = false;
 			SceneManager.LoadScene (2);
 		}
 
-		if(GameObject.FindGameObjectWithTag("Home Base").GetComponent<HomeBase>().health <= 0 && lost != true)
+		if (homebase == null)
+		{
+			homebase = GameObject.FindGameObjectWithTag ("Home Base").GetComponent<HomeBase> ();				
+		}
+
+		if (homebase.health <= 0 && lost != true)
 		{
 			lost = true;
+			spawner1.shouldSpawn = false;
+			spawner2.shouldSpawn = false;
 			SceneManager.LoadScene (2);
 		}
 
-		if((int)Mathf.Floor (Manager.GetTimeLeft() / 60) + 1 < lastint)
+		if ((int)Mathf.Floor (Manager.GetTimeLeft () / 60) + 1 < lastint)
 		{
 			lastint = (int)Mathf.Floor (Manager.GetTimeLeft () / 60);
 			spawner1.spawnDelay--;
 			spawner2.spawnDelay--;
 		}
+			
+
 	}
 
 

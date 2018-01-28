@@ -11,6 +11,12 @@ public class GameOver : MonoBehaviour {
 
 	void start()
 	{
+		Cursor.lockState = CursorLockMode.None;
+		Cursor.visible = true;
+	}
+
+	void Update()
+	{
 		if(Manager.won)
 		{
 			winScreen.SetActive (true);
@@ -24,6 +30,6 @@ public class GameOver : MonoBehaviour {
 
 	public void Menu()
 	{
-		SceneManager.LoadScene (0);
+		Application.Quit ();
 	}
 }
