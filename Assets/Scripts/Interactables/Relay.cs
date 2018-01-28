@@ -12,7 +12,7 @@ public class Relay : MonoBehaviour
 	float attackTimer = 0;
 	float decayTimer = 0;
 
-	public Transform shootFrom;
+	public GameObject shootFrom;
 
 	public EnemyController target;
 
