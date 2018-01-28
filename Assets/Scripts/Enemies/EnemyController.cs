@@ -23,7 +23,7 @@ public class EnemyController : MonoBehaviour {
 	Relay closestTower = null;
 
 	public AudioClip[] barks;
-	public float barkFireRate;
+	public float barkFireRate = 20;
 	private float nextBarkTime = 0f;
 
 	void Start () 
@@ -92,8 +92,7 @@ public class EnemyController : MonoBehaviour {
 		}
 
 		if (Time.time >= nextBarkTime) {
-		
-			nextBarkTime = Time.time + 1f / barkFireRate;
+			nextBarkTime = Time.time + 100f / Random.Range(0f, barkFireRate);
 			Manager.instance.RandomizeBarks (barks);
 		}
 	}

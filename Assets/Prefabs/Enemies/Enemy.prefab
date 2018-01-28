@@ -147,8 +147,41 @@ MonoBehaviour:
   health: 100
   attackTimer: 0
   strength: 3
-  relays: []
-  homeBase: {fileID: 4517154544991450, guid: e73e92083c7d5374e95e648317fc9d76, type: 2}
+  relays:
+  - {fileID: 0}
+  barks:
+  - {fileID: 8300000, guid: c85827cf9de4f4d41b2bd6b765365809, type: 3}
+  - {fileID: 8300000, guid: e858f56af2d15d244b54196178852327, type: 3}
+  - {fileID: 8300000, guid: 356444688e50caa4283582459be707ec, type: 3}
+  - {fileID: 8300000, guid: 5d988ed879632714ab408ce471e59940, type: 3}
+  - {fileID: 8300000, guid: a8cf540f900a2634ea3f8497251fb91f, type: 3}
+  - {fileID: 8300000, guid: 833a58ca25964c5459a2c4b8aeba72e4, type: 3}
+  - {fileID: 8300000, guid: 3b3f26f1fd0d83e49874e9023f3cfb32, type: 3}
+  - {fileID: 8300000, guid: 501435c646da4ff46a3679d9fe10595f, type: 3}
+  - {fileID: 8300000, guid: ea4fdde4105355d439f6e558a52885c3, type: 3}
+  - {fileID: 8300000, guid: d43508415e739d440ac12be28bfedcce, type: 3}
+  - {fileID: 8300000, guid: 7367d7c1fee4c9d41bd0d7149660b585, type: 3}
+  - {fileID: 8300000, guid: 024108250213611498a681c8f26574b3, type: 3}
+  - {fileID: 8300000, guid: 41f46f8201a90e24bbb25d1a3ddc1255, type: 3}
+  - {fileID: 8300000, guid: f54162d793b7e654eae4d68e21d533ab, type: 3}
+  - {fileID: 8300000, guid: 18724445eaef8d54c90d370ddf5be921, type: 3}
+  - {fileID: 8300000, guid: e67eded7f0c003546b3f4598035dfa6a, type: 3}
+  - {fileID: 8300000, guid: f5b2d077365a03341b68bde20f7b08e3, type: 3}
+  - {fileID: 8300000, guid: 2c35a4ff23931e04081fd53ad2f94ace, type: 3}
+  - {fileID: 8300000, guid: bc816f71a61434b4188bc0998f61cdae, type: 3}
+  - {fileID: 8300000, guid: d187412d0683b1d499c0a2952a86999b, type: 3}
+  - {fileID: 8300000, guid: 3b154a9ec24099b42a3ecb0dc7b2ec31, type: 3}
+  - {fileID: 8300000, guid: 77046cc493a31a74dba12cef86d3f59c, type: 3}
+  - {fileID: 8300000, guid: 2e431af9f79f3044885186d788de1daa, type: 3}
+  - {fileID: 8300000, guid: 8e3b6453a4672ed46be057fb89f54ebb, type: 3}
+  - {fileID: 8300000, guid: c5c7f637b7391e34ab957dda433937b9, type: 3}
+  - {fileID: 8300000, guid: 6a14ed9f0c1ece9409f4a39bf3f42252, type: 3}
+  - {fileID: 8300000, guid: 33d2f47c0994b8049a37a927af69fe3f, type: 3}
+  - {fileID: 8300000, guid: b5fa6c536c3fe504594b1584b48c64e8, type: 3}
+  - {fileID: 8300000, guid: cd4255e9d0eda9f4b84be47590dfe5c3, type: 3}
+  - {fileID: 8300000, guid: fb5150bcaa62f5b43a972b40f793f455, type: 3}
+  - {fileID: 8300000, guid: 4a116eeed1d37ce41b6d79f823009d3e, type: 3}
+  barkFireRate: 100
 --- !u!114 &114851836383023386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -161,6 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  stoppingDistMod: 0.6
 --- !u!136 &136657568097808116
 CapsuleCollider:
   m_ObjectHideFlags: 1
