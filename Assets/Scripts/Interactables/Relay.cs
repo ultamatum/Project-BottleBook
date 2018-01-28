@@ -12,6 +12,8 @@ public class Relay : MonoBehaviour
 	float attackTimer = 0;
 	float decayTimer = 0;
 
+	public bool alive = true;
+
 	public GameObject shootFrom;
 
 	public EnemyController target;
@@ -20,38 +22,41 @@ public class Relay : MonoBehaviour
 
 	void Update()
 	{
-		decayTimer += Time.deltaTime;
-		attackTimer += Time.deltaTime;
-
-		enemiesInRadius = Physics.OverlapSphere (transform.position, radius);
-
-		for(int i = 0; i < enemiesInRadius.Length; i++)
+		if (alive)
 		{
-			GameObject enemy = enemiesInRadius [i].gameObject;
-			if(enemy.GetComponent<EnemyController>() != null)
+			decayTimer += Time.deltaTime;
+			attackTimer += Time.deltaTime;
+
+			enemiesInRadius = Physics.OverlapSphere (transform.position, radius);
+
+			for (int i = 0; i < enemiesInRadius.Length; i++)
 			{
-				SetTarget (enemy);
+				GameObject enemy = enemiesInRadius [i].gameObject;
+				if (enemy.GetComponent<EnemyController> () != null)
+				{
+					SetTarget (enemy);
+				}
 			}
-		}
 
-		if(target != null)
-		{
-			Attack ();
-		}
+			if (target != null)
+			{
+				Attack ();
+			}
 
-		if(decayTimer >= 1) 
-		{
-			health -= decayAmount;
-			decayTimer = 0;
-		}
+			if (decayTimer >= 1)
+			{
+				health -= decayAmount;
+				decayTimer = 0;
+			}
 
-		if(health > maxHealth)
-		{
-			health = maxHealth;
-		} else if(health < 0)
-		{
-			health = 0;
-			Destroy (transform.parent.gameObject, 0.1f);
+			if (health > maxHealth)
+			{
+				health = maxHealth;
+			} else if (health < 0)
+			{
+				health = 0;
+				alive = false;
+			}
 		}
 	}
 

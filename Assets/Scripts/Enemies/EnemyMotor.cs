@@ -24,6 +24,7 @@ public class EnemyMotor : MonoBehaviour {
 	{
 		if(target != null)
 		{
+			Debug.Log (target);
 			agent.SetDestination (target.position);
 			FaceTarget ();
 		}

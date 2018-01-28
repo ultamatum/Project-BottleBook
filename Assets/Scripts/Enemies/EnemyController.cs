@@ -51,7 +51,7 @@ public class EnemyController : MonoBehaviour {
 				for(int i = 0; i < relays.Length; i++)
 				{
 					float distance = Vector3.Distance (transform.position, relays[i].transform.position);
-					if(distance < shortestDist || closestTower == null)
+					if(distance < shortestDist)
 					{
 						shortestDist = distance;
 						closestTower = relays[i];
@@ -67,9 +67,10 @@ public class EnemyController : MonoBehaviour {
 				AttackRelay ();
 			}
 				
-			if(relayFocus.health <= 0)
+			if(relayFocus.health <= 0 || relayFocus == null)
 			{
 				focusBase = true;
+				motor.StopFollowingTarget ();
 				targetFound = false;
 			}
 		} else 
@@ -77,6 +78,7 @@ public class EnemyController : MonoBehaviour {
 			if(!targetFound)
 			{
 				baseFocus = GameObject.FindGameObjectWithTag ("Home Base").GetComponent<HomeBase> ();
+				Debug.Log (baseFocus.transform.position);
 				motor.FollowBase (baseFocus);
 			}
 
