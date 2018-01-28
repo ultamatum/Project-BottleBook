@@ -10,19 +10,20 @@ public class Manager : MonoBehaviour
 	public float lowPitchRange = .95f;              //The lowest a sound effect will be randomly pitched.
 	public float highPitchRange = 1.05f;            //The highest a sound effect will be randomly pitched.
 
+	public static float timeLeft = 600;
+
+	public EnemySpawner spawner1;
+	public EnemySpawner spawner2;
+
+	int lastint = 10;
+
 
 	void Awake ()
 	{
-		//Check if there is already an instance of SoundManager
 		if (instance == null)
-			//if not, set it to this.
 			instance = this;
-		//If instance already exists:
 		else if (instance != this)
-			//Destroy this, this enforces our singleton pattern so there can only be one instance of SoundManager.
 			Destroy (gameObject);
-
-		//Set SoundManager to DontDestroyOnLoad so that it won't be destroyed when reloading our scene.
 		DontDestroyOnLoad (gameObject);
 	}
 
@@ -35,6 +36,22 @@ public class Manager : MonoBehaviour
 
 		//Play the clip.
 		efxSource.Play ();
+	}
+
+	void Update()
+	{
+		timeLeft -= Time.deltaTime;
+		if(timeLeft <= 0)
+		{
+			Debug.Log("GAME OVER");
+		}
+
+		if((int)Mathf.Floor (Manager.GetTimeLeft() / 60) + 1 < lastint)
+		{
+			lastint = (int)Mathf.Floor (Manager.GetTimeLeft () / 60);
+			spawner1.spawnDelay--;
+			spawner2.spawnDelay--;
+		}
 	}
 
 
@@ -74,5 +91,10 @@ public class Manager : MonoBehaviour
 
 		//Play the clip.
 		barkSource.Play();
+	}
+
+	public static float GetTimeLeft()
+	{
+		return timeLeft;
 	}
 }
