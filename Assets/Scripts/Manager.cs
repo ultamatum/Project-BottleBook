@@ -11,7 +11,7 @@ public class Manager : MonoBehaviour
 	public float lowPitchRange = .95f;              //The lowest a sound effect will be randomly pitched.
 	public float highPitchRange = 1.05f;            //The highest a sound effect will be randomly pitched.
 
-	public static float timeLeft = 60;
+	public static float timeLeft = 600;
 
 	public EnemySpawner spawner1;
 	public EnemySpawner spawner2;
@@ -46,40 +46,37 @@ public class Manager : MonoBehaviour
 
 	void Update()
 	{
-		while(!won && !lost)
+		timeLeft -= Time.deltaTime;
+
+		if (timeLeft <= 0 && won == false)
 		{
-			timeLeft -= Time.deltaTime;
-			if(timeLeft <= 0 && won != true)
-			{
-				Debug.Log ("YAY");
-				won = true;
-				spawner1.shouldSpawn = false;
-				spawner2.shouldSpawn = false;
-				SceneManager.LoadScene (2);
-			}
-
-			if (homebase == null)
-			{
-				homebase = GameObject.FindGameObjectWithTag ("Home Base").GetComponent<HomeBase> ();				
-			}
-
-			if(homebase.health <= 0 && lost != true)
-			{
-				Debug.Log ("BOO");
-				lost = true;
-				spawner1.shouldSpawn = false;
-				spawner2.shouldSpawn = false;
-				SceneManager.LoadScene (2);
-			}
-
-			if((int)Mathf.Floor (Manager.GetTimeLeft() / 60) + 1 < lastint)
-			{
-				lastint = (int)Mathf.Floor (Manager.GetTimeLeft () / 60);
-				spawner1.spawnDelay--;
-				spawner2.spawnDelay--;
-			}
-			
+			won = true;
+			spawner1.shouldSpawn = false;
+			spawner2.shouldSpawn = false;
+			SceneManager.LoadScene (2);
 		}
+
+		if (homebase == null)
+		{
+			homebase = GameObject.FindGameObjectWithTag ("Home Base").GetComponent<HomeBase> ();				
+		}
+
+		if (homebase.health <= 0 && lost != true)
+		{
+			lost = true;
+			spawner1.shouldSpawn = false;
+			spawner2.shouldSpawn = false;
+			SceneManager.LoadScene (2);
+		}
+
+		if ((int)Mathf.Floor (Manager.GetTimeLeft () / 60) + 1 < lastint)
+		{
+			lastint = (int)Mathf.Floor (Manager.GetTimeLeft () / 60);
+			spawner1.spawnDelay--;
+			spawner2.spawnDelay--;
+		}
+			
+
 	}
 
 
