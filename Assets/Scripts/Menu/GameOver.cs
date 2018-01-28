@@ -11,12 +11,21 @@ public class GameOver : MonoBehaviour {
 
 	void start()
 	{
+		Cursor.lockState = CursorLockMode.None;
+		Cursor.visible = true;
+	}
+
+	void Update()
+	{
+		Debug.Log (Manager.won);
 		if(Manager.won)
 		{
+			Debug.Log ("YAY");
 			winScreen.SetActive (true);
 			lossScreen.SetActive (false);
 		} else if (Manager.lost)
 		{
+			Debug.Log ("BOO");
 			winScreen.SetActive (false);
 			lossScreen.SetActive (true);
 		}
@@ -24,6 +33,6 @@ public class GameOver : MonoBehaviour {
 
 	public void Menu()
 	{
-		SceneManager.LoadScene (0);
+		Application.Quit ();
 	}
 }
