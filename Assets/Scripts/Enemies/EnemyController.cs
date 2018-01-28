@@ -5,14 +5,15 @@ using UnityEngine;
 [RequireComponent(typeof(EnemyMotor))]
 public class EnemyController : MonoBehaviour {
 
-	public Relay relayFocus;
-	public HomeBase baseFocus;
+	public GameObject focus;
 
 	public float health = 100;
 	public float attackTimer;
 	public float strength = 3;
+	public float interactionRadius = 40;
 
-	public Relay[] relays;
+	public GameObject[] goRelays;
+	public GameObject goBase;
 
 	EnemyMotor motor;
 
@@ -20,7 +21,7 @@ public class EnemyController : MonoBehaviour {
 	bool focusBase = false;
 
 	float shortestDist = 0;
-	Relay closestTower = null;
+	GameObject closestTower = null;
 
 	public AudioClip[] barks;
 	public float barkFireRate = 20;
@@ -28,106 +29,81 @@ public class EnemyController : MonoBehaviour {
 
 	void Start () 
 	{
-		relayFocus = null;
+		focus = null;
 
 		motor = GetComponent<EnemyMotor> ();
 
-		GameObject[] goRelays = GameObject.FindGameObjectsWithTag ("Relay");
+		goRelays = GameObject.FindGameObjectsWithTag ("Relay");
 
-		relays = new Relay[goRelays.Length]; 
-
-		for (int i = 0; i < relays.Length; i++)
-		{
-			relays [i] = goRelays [i].GetComponent<Relay> ();
-		}
+		goBase = GameObject.FindGameObjectWithTag ("Home Base");
 	}
 
-	void Update () 
+	void Update ()
 	{
-		if(!focusBase)
+		if (focus == null)
 		{
-			if(!targetFound)
+			for (int i = 0; i < goRelays.Length; i++)
 			{
-				for(int i = 0; i < relays.Length; i++)
+				float distance = Vector3.Distance (transform.position, goRelays [i].transform.position);
+				if (distance < shortestDist || i == 0)
 				{
-					float distance = Vector3.Distance (transform.position, relays[i].transform.position);
-					if(distance < shortestDist)
-					{
-						shortestDist = distance;
-						closestTower = relays[i];
-					}
-				}
+					shortestDist = distance;
+					closestTower = goRelays [i];
+				} 
+			}
+			NewFocus (closestTower);
+		}
 
-				FocusRelay (closestTower);
-				targetFound = true;
-			}
-
-			if(Vector3.Distance (transform.position, relayFocus.transform.position) <= relayFocus.radius)
-			{
-				AttackRelay ();
-			}
-				
-			if(relayFocus.health <= 0 || relayFocus == null)
-			{
-				focusBase = true;
-				motor.StopFollowingTarget ();
-				targetFound = false;
-			}
-		} else 
+		if (Vector3.Distance (transform.position, focus.transform.position) <= interactionRadius)
 		{
-			if(!targetFound)
-			{
-				baseFocus = GameObject.FindGameObjectWithTag ("Home Base").GetComponent<HomeBase> ();
-				Debug.Log (baseFocus.transform.position);
-				motor.FollowBase (baseFocus);
-			}
+			Attack ();
+		}
 
-			if(Vector3.Distance (transform.position, baseFocus.transform.position) <= baseFocus.radius)
+		if(focus.GetComponent<Relay>())
+		{
+			if(focus.GetComponent<Relay>().health <= 0)
 			{
-				AttackBase ();
+				NewFocus (goBase);
 			}
 		}
 
-		if(health <= 0)
+		if (health <= 0)
 		{
 			Object.Destroy (gameObject);
 		}
 
-		if (Time.deltaTime >= nextBarkTime) {
+		if (Time.deltaTime >= nextBarkTime)
+		{
 			nextBarkTime = Time.deltaTime + 300000f; // Random.Range(0f, barkFireRate);
 			Manager.instance.RandomizeBarks (barks);
 		}
 	}
 
-	void AttackRelay ()
+	void Attack()
 	{
 		attackTimer += Time.deltaTime;
 		if(attackTimer >= 1f)
 		{
-			relayFocus.Damage (strength);
+			if(focus.GetComponent<Relay>())
+			{
+				focus.GetComponent<Relay> ().Damage (strength);
+			} else if (focus.GetComponent<HomeBase>())
+			{
+				focus.GetComponent<HomeBase> ().Damage (strength);
+			}
 			attackTimer = 0;
 		}
 	}
 
-	void AttackBase ()
+	void NewFocus(GameObject newFocus)
 	{
-		attackTimer += Time.deltaTime;
-		if(attackTimer >= 1f)
-		{
-			baseFocus.Damage (strength);
-			attackTimer = 0;
-		}
-	}
-
-	void FocusRelay(Relay newFocus)
-	{
-		relayFocus = newFocus;
-		motor.FollowRelay (relayFocus);
+		focus = newFocus;
+		motor.FollowTarget (newFocus);
 	}
 
 	void RemoveAttackFocus()
 	{
-		relayFocus = null;
+		focus = null;
 		motor.StopFollowingTarget ();
 	}
 

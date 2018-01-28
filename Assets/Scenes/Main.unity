@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4057533, g: 0.30294508, b: 0.44125345, a: 1}
+  m_IndirectSpecularColor: {r: 0.40575334, g: 0.30294505, b: 0.44125345, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1742,9 +1742,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300092, guid: b84b015ff0e38594583fd9a9f8934951, type: 3}
 --- !u!1001 &151975145
@@ -4377,6 +4377,7 @@ MonoBehaviour:
   zapEnergyUse: 4
   strength: 100
   attackDelay: 1
+  alive: 1
   shootFrom: {fileID: 962782877}
   target: {fileID: 0}
 --- !u!64 &362280123
@@ -4388,9 +4389,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300022, guid: b84b015ff0e38594583fd9a9f8934951, type: 3}
 --- !u!1001 &383630142
@@ -4506,6 +4507,11 @@ Prefab:
     - target: {fileID: 4168579606701904, guid: 5222b4b76da3d5f43bd34801e8b363aa, type: 2}
       propertyPath: m_LocalPosition.y
       value: 5.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114995345777507756, guid: 5222b4b76da3d5f43bd34801e8b363aa,
+        type: 2}
+      propertyPath: radius
+      value: 38.57
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5222b4b76da3d5f43bd34801e8b363aa, type: 2}
@@ -7493,9 +7499,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300034, guid: b84b015ff0e38594583fd9a9f8934951, type: 3}
 --- !u!1001 &586366532
@@ -8074,9 +8080,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: b84b015ff0e38594583fd9a9f8934951, type: 3}
 --- !u!1001 &629528557
@@ -12302,9 +12308,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300094, guid: b84b015ff0e38594583fd9a9f8934951, type: 3}
 --- !u!1 &1075070125
@@ -13523,9 +13529,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300014, guid: b84b015ff0e38594583fd9a9f8934951, type: 3}
 --- !u!1001 &1234403567
@@ -14120,9 +14126,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300100, guid: b84b015ff0e38594583fd9a9f8934951, type: 3}
 --- !u!1001 &1303907617
@@ -14449,9 +14455,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300004, guid: b84b015ff0e38594583fd9a9f8934951, type: 3}
 --- !u!1 &1343134106
@@ -14540,9 +14546,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300002, guid: b84b015ff0e38594583fd9a9f8934951, type: 3}
 --- !u!114 &1343134111
@@ -14563,6 +14569,7 @@ MonoBehaviour:
   zapEnergyUse: 4
   strength: 100
   attackDelay: 1
+  alive: 1
   shootFrom: {fileID: 291078751}
   target: {fileID: 0}
 --- !u!1001 &1353755723
@@ -14914,9 +14921,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300024, guid: b84b015ff0e38594583fd9a9f8934951, type: 3}
 --- !u!1 &1386461653
@@ -15002,9 +15009,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300026, guid: b84b015ff0e38594583fd9a9f8934951, type: 3}
 --- !u!1 &1387410135
@@ -15163,9 +15170,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300036, guid: b84b015ff0e38594583fd9a9f8934951, type: 3}
 --- !u!1001 &1409169923
@@ -15705,9 +15712,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300102, guid: b84b015ff0e38594583fd9a9f8934951, type: 3}
 --- !u!1001 &1479912734
@@ -15845,9 +15852,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300040, guid: b84b015ff0e38594583fd9a9f8934951, type: 3}
 --- !u!1001 &1510374958
@@ -16526,6 +16533,7 @@ MonoBehaviour:
   zapEnergyUse: 4
   strength: 100
   attackDelay: 1
+  alive: 1
   shootFrom: {fileID: 940759077}
   target: {fileID: 0}
 --- !u!64 &1567530369
@@ -16537,9 +16545,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300042, guid: b84b015ff0e38594583fd9a9f8934951, type: 3}
 --- !u!1001 &1571175455
@@ -17359,6 +17367,7 @@ MonoBehaviour:
   zapEnergyUse: 4
   strength: 100
   attackDelay: 1
+  alive: 1
   shootFrom: {fileID: 595148234}
   target: {fileID: 0}
 --- !u!64 &1635443401
@@ -17370,9 +17379,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300012, guid: b84b015ff0e38594583fd9a9f8934951, type: 3}
 --- !u!1001 &1651534818
@@ -21063,9 +21072,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300006, guid: b84b015ff0e38594583fd9a9f8934951, type: 3}
 --- !u!1001 &1908306338
@@ -21331,9 +21340,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300016, guid: b84b015ff0e38594583fd9a9f8934951, type: 3}
 --- !u!1 &1920015170
@@ -21832,9 +21841,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300096, guid: b84b015ff0e38594583fd9a9f8934951, type: 3}
 --- !u!1001 &1963758902
@@ -22996,6 +23005,7 @@ MonoBehaviour:
   zapEnergyUse: 4
   strength: 100
   attackDelay: 1
+  alive: 1
   shootFrom: {fileID: 1694823840}
   target: {fileID: 0}
 --- !u!64 &2038962595
@@ -23007,9 +23017,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300032, guid: b84b015ff0e38594583fd9a9f8934951, type: 3}
 --- !u!4 &2045000132 stripped

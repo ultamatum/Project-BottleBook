@@ -39,17 +39,9 @@ public class EnemyMotor : MonoBehaviour {
 		agent.SetDestination (point);
 	}
 
-	public void FollowRelay (Relay newTarget)
+	public void FollowTarget (GameObject newTarget)
 	{
-		agent.stoppingDistance = newTarget.radius * stoppingDistMod;
-		agent.updateRotation = false;
-
-		target = newTarget.transform;
-	}
-
-	public void FollowBase (HomeBase newTarget)
-	{
-		agent.stoppingDistance = newTarget.radius * stoppingDistMod;
+		agent.stoppingDistance = 40 * stoppingDistMod;
 		agent.updateRotation = false;
 
 		target = newTarget.transform;

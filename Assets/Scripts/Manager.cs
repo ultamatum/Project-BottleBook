@@ -51,8 +51,8 @@ public class Manager : MonoBehaviour
 		if (timeLeft <= 0 && won == false)
 		{
 			won = true;
-			spawner1.shouldSpawn = false;
-			spawner2.shouldSpawn = false;
+			Destroy (spawner1);
+			Destroy (spawner2);
 			SceneManager.LoadScene (2);
 		}
 
@@ -64,8 +64,8 @@ public class Manager : MonoBehaviour
 		if (homebase.health <= 0 && lost != true)
 		{
 			lost = true;
-			spawner1.shouldSpawn = false;
-			spawner2.shouldSpawn = false;
+			Destroy (spawner1);
+			Destroy (spawner2);
 			SceneManager.LoadScene (2);
 		}
 
