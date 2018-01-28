@@ -18,6 +18,10 @@ public class EnemyController : MonoBehaviour {
 	float shortestDist = 0;
 	Relay closestTower = null;
 
+	public AudioClip[] barks;
+	public float barkFireRate;
+	private float nextBarkTime = 0f;
+
 	void Start () 
 	{
 		focus = null;
@@ -59,6 +63,12 @@ public class EnemyController : MonoBehaviour {
 		if(health <= 0)
 		{
 			Object.Destroy (gameObject);
+		}
+
+		if (Time.time >= nextBarkTime) {
+		
+			nextBarkTime = Time.time + 1f / barkFireRate;
+			Manager.instance.RandomizeBarks (barks);
 		}
 	}
 
