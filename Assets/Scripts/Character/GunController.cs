@@ -27,7 +27,7 @@ public class GunController : MonoBehaviour {
 		muzzleFlash.Play ();
 
 		RaycastHit hit;
-		if(Physics.Raycast (GetComponent<Camera>().transform.position, GetComponent<Camera>().transform.forward, out hit, range, rayMask))
+		if(Physics.Raycast (Camera.main.transform.position, Camera.main.transform.forward, out hit, range, rayMask))
 		{
 			EnemyController enemy = hit.transform.GetComponent<EnemyController> ();
 			if(enemy != null)
