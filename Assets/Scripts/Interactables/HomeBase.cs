@@ -101,6 +101,10 @@ public class HomeBase : MonoBehaviour {
 		health -= amount;
 	}
 
+	public float BarHealth()
+	{
+		return health / maxHealth;
+	}
 
 	void DrawLine (Vector3 start, Vector3 end, Color color, float duration = 0.2f){
 

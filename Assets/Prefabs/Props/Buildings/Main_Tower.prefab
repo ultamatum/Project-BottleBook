@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 114995345777507756}
   m_Layer: 0
   m_Name: Main_Tower
-  m_TagString: Untagged
+  m_TagString: Home Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -206,4 +206,4 @@ MonoBehaviour:
   shootFrom: {fileID: 4092504311961046}
   batteryOutput: {fileID: 4168579606701904}
   currentBattery: {fileID: 0}
-  battery: {fileID: 1784617423511480, guid: 134662c3b2c14d6458fd98d0acb951ef, type: 2}
+  battery: {fileID: 1816490885974110, guid: 134662c3b2c14d6458fd98d0acb951ef, type: 2}
