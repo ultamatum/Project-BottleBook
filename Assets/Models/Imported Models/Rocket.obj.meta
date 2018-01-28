@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: 2e3bb24619cad044cacab731ca69a9f3
-timeCreated: 1517106321
-licenseType: Pro
+guid: 4a23ea55af01e86488a5c0475ac94008
+timeCreated: 1517104401
+licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -19,6 +19,13 @@ ModelImporter:
     400008: //RootNode
     400010: VENT
     400012: WINDOW
+    2100000: lambert7SG
+    2100002: lambert3SG
+    2100004: initialShadingGroup
+    2100006: lambert2SG
+    2100008: lambert6SG
+    2100010: lambert5SG
+    2100012: lambert4SG
     2300000: BODY
     2300002: DOOR
     2300004: DOOR_FRAME
@@ -37,47 +44,12 @@ ModelImporter:
     4300006: FINS
     4300008: VENT
     4300010: WINDOW
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: initialShadingGroup
-    second: {fileID: 2100000, guid: fce6342ba5bf7b1489e8f7793aeec4a2, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert2SG
-    second: {fileID: 2100000, guid: 0a5b4998aaf5d5940a1a596d33f22017, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert3SG
-    second: {fileID: 2100000, guid: 7dfc0ecd42c7169428a0081cc71608fe, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert4SG
-    second: {fileID: 2100000, guid: 5edbe829dd02e2b48aefcb9a3ce9c173, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert5SG
-    second: {fileID: 2100000, guid: 02c2171e5d0095949bd8037b8047cb49, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert6SG
-    second: {fileID: 2100000, guid: f10781a658dcf78419432ed8ab014013, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert7SG
-    second: {fileID: 2100000, guid: fe87d65b7cd0d0f4eac2db747eb76e34, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -115,6 +87,8 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
