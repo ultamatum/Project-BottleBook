@@ -21,13 +21,13 @@ GameObject:
   - component: {fileID: 4517154544991450}
   - component: {fileID: 33520187544322126}
   - component: {fileID: 23331524346354754}
-  - component: {fileID: 114755502571433424}
+  - component: {fileID: 114964759751138914}
   m_Layer: 0
   m_Name: Home Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!1 &1631377224625928
 GameObject:
@@ -43,8 +43,8 @@ GameObject:
   m_Name: Battery Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &4474233904633588
 Transform:
@@ -155,7 +155,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1559989902962232}
   m_Mesh: {fileID: 4300002, guid: f45b6695d6226cd48abfc605723cc3ae, type: 3}
---- !u!114 &114755502571433424
+--- !u!114 &114964759751138914
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

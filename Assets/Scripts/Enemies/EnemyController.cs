@@ -14,8 +14,6 @@ public class EnemyController : MonoBehaviour {
 
 	public Relay[] relays;
 
-	public Transform homeBase;
-
 	EnemyMotor motor;
 
 	bool targetFound = false;
@@ -74,7 +72,7 @@ public class EnemyController : MonoBehaviour {
 		{
 			if(!targetFound)
 			{
-				baseFocus = homeBase.GetComponent<HomeBase>();
+				baseFocus = GameObject.FindGameObjectWithTag("Home Base");
 				motor.FollowBase (baseFocus);
 			}
 
@@ -105,7 +103,7 @@ public class EnemyController : MonoBehaviour {
 		attackTimer += Time.deltaTime;
 		if(attackTimer >= 1f)
 		{
-			homeBase.GetComponent<HomeBase>().Damage (strength);
+			baseFocus.Damage (strength);
 			attackTimer = 0;
 		}
 	}

@@ -5,7 +5,7 @@ using UnityEngine;
 public class HomeBase : MonoBehaviour {
 
 	public float batterySpawnDelay = 8f;
-	public float health = 200f;
+	public float health = 200;
 	public float maxHealth = 200f;
 	public float radius = 5f;
 	public Transform batteryOutput;
@@ -42,7 +42,6 @@ public class HomeBase : MonoBehaviour {
 
 	public void Damage(float amount)
 	{
-		Debug.Log("Hey");
 		health -= amount;
 	}
 }

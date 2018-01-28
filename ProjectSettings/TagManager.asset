@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Relay
+  - Fire
+  - Home Base
   layers:
   - Default
   - TransparentFX
