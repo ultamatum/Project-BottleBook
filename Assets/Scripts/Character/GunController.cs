@@ -13,13 +13,6 @@ public class GunController : MonoBehaviour {
 
 	private float nextFireTime = 0f;
 
-	Camera camera;
-
-	void Start()
-	{
-		camera = Camera.main;
-	}
-
 	void Update () 
 	{
 		if (Input.GetButton ("Fire1") && Time.time >= nextFireTime)
@@ -34,7 +27,7 @@ public class GunController : MonoBehaviour {
 		muzzleFlash.Play ();
 
 		RaycastHit hit;
-		if(Physics.Raycast (camera.transform.position, camera.transform.forward, out hit, range, rayMask))
+		if(Physics.Raycast (GetComponent<Camera>().transform.position, GetComponent<Camera>().transform.forward, out hit, range, rayMask))
 		{
 			EnemyController enemy = hit.transform.GetComponent<EnemyController> ();
 			if(enemy != null)
