@@ -14,7 +14,7 @@ public class Relay : MonoBehaviour
 
 	public Transform shootFrom;
 
-	EnemyController target;
+	public EnemyController target;
 
 	Collider[] enemiesInRadius;
 
@@ -65,6 +65,8 @@ public class Relay : MonoBehaviour
 			target.Damage (strength);
 			attackTimer = 0;
 		}
+
+		DrawLine (shootFrom.transform.position, target.transform.position, Color.red);
 	}
 
 	void OnDrawGizmosSelected ()
@@ -96,5 +98,21 @@ public class Relay : MonoBehaviour
 	public float BarHealth()
 	{
 		return health / maxHealth;
+	}
+
+	void DrawLine (Vector3 start, Vector3 end, Color color, float duration = 0.2f){
+	
+		GameObject myLine = new GameObject ();
+		myLine.transform.position = start;
+		myLine.AddComponent<LineRenderer> ();
+		LineRenderer LR = myLine.GetComponent<LineRenderer> ();
+		LR.material = new Material (Shader.Find ("Particles/Alpha Blended Premultiply"));
+		LR.startColor = color;
+		LR.endColor = color;
+		LR.startWidth = 0.1f;
+		LR.endWidth = 0.1f;
+		LR.SetPosition (0, start);
+		LR.SetPosition (1, end);
+		GameObject.Destroy (myLine, duration);
 	}
 }

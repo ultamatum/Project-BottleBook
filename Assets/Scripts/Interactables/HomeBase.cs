@@ -75,13 +75,15 @@ public class HomeBase : MonoBehaviour {
 
 	void Attack()
 	{
-		Debug.DrawLine (shootFrom.transform.position, target.transform.position);
+		//Debug.DrawLine (shootFrom.transform.position, target.transform.position);
 
 		if(attackTimer >= attackDelay)
 		{
 			target.Damage (strength);
 			attackTimer = 0;
 		}
+
+		DrawLine (shootFrom.transform.position, target.transform.position, Color.red);
 	}
 
 	void SetTarget (GameObject enemy)
@@ -97,5 +99,22 @@ public class HomeBase : MonoBehaviour {
 	public void Damage(float amount)
 	{
 		health -= amount;
+	}
+
+
+	void DrawLine (Vector3 start, Vector3 end, Color color, float duration = 0.2f){
+
+		GameObject myLine = new GameObject ();
+		myLine.transform.position = start;
+		myLine.AddComponent<LineRenderer> ();
+		LineRenderer LR = myLine.GetComponent<LineRenderer> ();
+		LR.material = new Material (Shader.Find ("Particles/Alpha Blended Premultiply"));
+		LR.startColor = color;
+		LR.endColor = color;
+		LR.startWidth = 0.1f;
+		LR.endWidth = 0.1f;
+		LR.SetPosition (0, start);
+		LR.SetPosition (1, end);
+		GameObject.Destroy (myLine, duration);
 	}
 }
