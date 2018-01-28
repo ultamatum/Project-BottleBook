@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour 
 {
@@ -14,6 +15,9 @@ public class Manager : MonoBehaviour
 
 	public EnemySpawner spawner1;
 	public EnemySpawner spawner2;
+
+	public static bool lost = false;
+	public static bool won = false;
 
 	int lastint = 10;
 
@@ -41,9 +45,16 @@ public class Manager : MonoBehaviour
 	void Update()
 	{
 		timeLeft -= Time.deltaTime;
-		if(timeLeft <= 0)
+		if(timeLeft <= 0 && won != true)
 		{
-			Debug.Log("GAME OVER");
+			won = true;
+			SceneManager.LoadScene (2);
+		}
+
+		if(GameObject.FindGameObjectWithTag("Home Base").GetComponent<HomeBase>().health <= 0 && lost != true)
+		{
+			lost = true;
+			SceneManager.LoadScene (2);
 		}
 
 		if((int)Mathf.Floor (Manager.GetTimeLeft() / 60) + 1 < lastint)
