@@ -109,7 +109,7 @@ public class Manager : MonoBehaviour
 		if (barkSource.isPlaying) {
 			return;
 		}
-		int rng = Random.Range (0, 75);
+		int rng = Random.Range (0, 20);
 		if (rng != 1) {
 			return;
 		}
